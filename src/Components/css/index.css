@@ -20,7 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--bglight);
+  background: var(--bgdark);
 }
 
 code {
@@ -33,11 +33,11 @@ code {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
   max-width: 1200px;
   width: 100vw;
   background: var(--bgdark);
   margin: 0 auto;
-  height: 100vh;
+  /* height: 100vh; */
   position: relative;
 }

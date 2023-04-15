@@ -1,10 +1,10 @@
-h1{
+.HeaderH1 {
     color: var(--bglight);
     margin: 0 auto;
     padding: 3rem 0 1rem;
     font-size: 3.5rem;
 }
-img{
+.HeaderImg {
     width: 30px;
     height: 30px;
     position: absolute;

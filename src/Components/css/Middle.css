@@ -1,3 +1,94 @@
-.Middle{
+.Middle {
     height: 100%;
+    color: var(--bglight);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* -------------- Search Section ----------------- */
+.SearchMain {
+    width: 100%;
+}
+
+.SearchMain form {
+    max-width: 600px;
+    width: 90vw;
+    margin: 2rem auto;
+    position: relative;
+    padding: 1rem;
+    background: var(--bglight);
+    border-radius: 30px;
+}
+
+.SearchMain form input {
+    width: calc(100% - 90px);
+    outline: none;
+    border: none;
+    padding-left: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.SearchMain form button {
+    border-radius: 30px;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    bottom: 0.3rem;
+    width: 70px;
+    background: rgb(61, 61, 243);
+    /* height: 100%; */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* -------------- Images Section ----------------- */
+.ImagesMain {
+    width: 100%;
+    /* height: 100%; */
+    /* overflow: scroll; */
+}
+
+.ImagesMain-container {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    /* grid-template-rows: 15rem; */
+    gap: 20px;
+    /* justify-content: flex-start; */
+    align-items: center;
+    overflow: hidden;
+}
+
+@media (min-width:768px) {
+    .ImagesMain-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width:992px) {
+    .ImagesMain-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.ImagesMain-container>img {
+    border-radius: 5px;
+    width: 100%;
+    height: 20rem;
+    /* object-position: center; */
+    object-fit: cover;
+    display: block;
+}
+
+
+/* -------------- Pagination Section ----------------- */
+.PaginationMain {
+    margin: 2rem auto;
 }

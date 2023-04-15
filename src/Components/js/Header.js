@@ -6,8 +6,8 @@ import '../css/Header.css'
 export default function Header() {
   return (
     <>
-      <img src={Sun} alt="Hitesh" />
-      <h1>Search Images</h1>
+      <img className='HeaderImg' src={Sun} alt="Hitesh" />
+      <h1 className='HeaderH1'>Search Images</h1>
     </>
   )
 }
