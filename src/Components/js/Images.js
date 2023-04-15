@@ -7,6 +7,7 @@ export default function Images(Props) {
     document.getElementById('Model-container').style.display = 'block';
     // document.getElementById('ModelImage').style.transform = 'scaleX(1)';
   }
+  const ssss=() => {document.getElementById('Model-container').style.display = 'none'}
   return (
     <>
       <div className='ImagesMain'>
@@ -19,9 +20,9 @@ export default function Images(Props) {
             })
           }
         </div>
-        <div className='Model-container' id='Model-container' onClick={() => document.getElementById('Model-container').style.display = 'none'}>
+        <div className='Model-container' id='Model-container' onClick={ssss}>
           <div className='Model-container-inner'>
-            <img src={Props.images[ShowIndex]} alt="Hitesh" id='ModelImage' onClick={() => document.getElementById('Model-container').style.display = 'block'}/>
+            <img src={Props.images[ShowIndex]} alt="Hitesh" id='ModelImage' onClick={() => document.getElementById('Model-container').style.display = 'flex'}/>
           </div>
         </div>
       </div>

@@ -65,11 +65,8 @@
     top: 0;
     left: 0;
     overflow: auto;
-    z-index: 3;
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .Model-container .Model-container-inner {
@@ -131,7 +128,7 @@
 /* -------------- Pagination Section ----------------- */
 .PaginationMain {
     width: 300px;
-    margin: 0 auto;
+    margin: 1rem auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,4 +155,9 @@
     font-size: 1.5rem;
     color: #000;
     cursor: pointer;
+}
+
+.PaginationMain .Numbers p.active {
+    color: red;
+    font-weight: 700;
 }
