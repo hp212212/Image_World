@@ -8,19 +8,32 @@ html {
   font-size: 62.5%;
 }
 
-:root {
+.Light {
   --bglight: #fff;
   --bgdark: #000;
-}
-
-body {
+  /* --bglight: #000;
+  --bgdark: #fff; */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--bgdark);
+  background: #fff;
+}
+
+.Dark {
+  /* --bglight: #fff;
+  --bgdark: #000; */
+  --bglight: #000;
+  --bgdark: #fff;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000;
 }
 
 code {
@@ -36,7 +49,7 @@ code {
   /* background-color: #fafafa; */
   max-width: 1200px;
   width: 100vw;
-  background: var(--bgdark);
+  background: var(--bglight);
   margin: 0 auto;
   /* height: 100vh; */
   position: relative;

@@ -1,5 +1,5 @@
 .HeaderH1 {
-    color: var(--bglight);
+    color: var(--bgdark);
     margin: 0 auto;
     padding: 3rem 0 1rem;
     font-size: 3.5rem;
@@ -10,7 +10,6 @@
     position: absolute;
     top: 2rem;
     right: 2rem;
-    /* left: 0; */
-    /* border-radius: 50%; */
-    /* background: var(--bglight); */
+    cursor: pointer;
+    /* background: #fff; */
 }

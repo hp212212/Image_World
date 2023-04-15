@@ -1,6 +1,6 @@
 .Middle {
     height: 100%;
-    color: var(--bglight);
+    color: var(--bgdark);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -20,12 +20,12 @@
     margin: 2rem auto;
     position: relative;
     padding: 1rem;
-    background: var(--bglight);
+    background: #fff;
     border-radius: 30px;
 }
 
 .SearchMain form input {
-    width: calc(100% - 90px);
+    width: 100%;
     outline: none;
     border: none;
     padding-left: 1rem;
@@ -90,5 +90,32 @@
 
 /* -------------- Pagination Section ----------------- */
 .PaginationMain {
-    margin: 2rem auto;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    /* padding: 0.5rem 1rem; */
+}
+
+.PaginationMain>img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+.PaginationMain .Numbers {
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.PaginationMain .Numbers p {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #000;
+    cursor: pointer;
 }
