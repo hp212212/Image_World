@@ -20,12 +20,17 @@ export default function Middle() {
       fetch(`https://api.unsplash.com/search/photos?client_id=Bb-6szc-iyrTPIG_IFgEl2Rt3-HiUOLaOVA0bfbKJQU&page=1&query=${Input}`)
         .then(response => response.json())
         .then(data => {
-          console.log(data.results)
+          console.log(data)
+          // if (data.total >= 10) {
           for (let i of data.results) {
             TempImg.push(i.urls.regular)
           }
           setAllImages(TempImg)
+          // }else{
+          //   setAllImages([])
+          // }
         });
+      setInput('')
     }
   }
   return (
@@ -33,11 +38,11 @@ export default function Middle() {
       <div className='Middle'>
         <div className='SearchMain'>
           <form onSubmit={SearchSubmit}>
-            <input type='text' id='SearchInput' value={Input || ''} placeholder='Search By Key Word' aria-label="lorem ipsum" onChange={(event) => { setInput(event.target.value) }} />
+            <input type='text' id='SearchInput' value={Input || ''} autoComplete='off' placeholder='Search By Key Word' aria-label="lorem ipsum" onChange={(event) => { setInput(event.target.value) }} />
             {/* <button className='SearchButton'>Search</button> */}
           </form>
         </div>
-        <Images res={AllImages} />
+        <Images images={AllImages} />
         <div className='PaginationMain'>
           <img src={First} alt="Hitesh" />
           <img src={previous} alt="Hitesh" />
