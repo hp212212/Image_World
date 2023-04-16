@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-// import Images from './Images'
+import Images from './Images'
 import '../css/Middle.css'
 import next from '../Assets/Images/next.svg'
 import previous from '../Assets/Images/previous.svg'
 import First from '../Assets/Images/First.svg'
 import Last from '../Assets/Images/Last.svg'
 import { DefultImages } from './Service'
-const Images = React.lazy(() => import('./Images.js'));
+// const Images = React.lazy(() => import('./Images.js'));
 
 export default function Middle() {
   let [Pages, setPages] = useState([])
