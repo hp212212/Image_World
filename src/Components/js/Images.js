@@ -26,7 +26,11 @@ export default function Images(Props) {
           {
             Props.images.map((image, index) => {
               return (
-                <img src={image} alt="Hitesh" key={index} onClick={() => OpenModel(index)} />
+                <img
+                  src={`${image}&q=80&w=200`} alt="Hitesh"
+                  key={index}
+                  onClick={() => OpenModel(index)}
+                />
               )
             })
           }

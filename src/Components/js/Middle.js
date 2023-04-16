@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import Images from './Images'
+// import Images from './Images'
 import '../css/Middle.css'
 import next from '../Assets/Images/next.svg'
 import previous from '../Assets/Images/previous.svg'
 import First from '../Assets/Images/First.svg'
 import Last from '../Assets/Images/Last.svg'
 import { DefultImages } from './Service'
+const Images = React.lazy(() => import('./Images.js'));
 
 export default function Middle() {
   let [Pages, setPages] = useState([])
@@ -17,14 +18,14 @@ export default function Middle() {
   let [MinPageLimit, setMinPageLimit] = useState(0)
   console.log(AllImages.length)
 
-  const MainFetch = () => {
+  const MainFetch = async () => {
     let TempImg = []
-    fetch(`https://api.unsplash.com/search/photos?client_id=Bb-6szc-iyrTPIG_IFgEl2Rt3-HiUOLaOVA0bfbKJQU&page=${Current}&query=${Input}`)
+    await  fetch(`https://api.unsplash.com/search/photos?client_id=Bb-6szc-iyrTPIG_IFgEl2Rt3-HiUOLaOVA0bfbKJQU&page=${Current}&query=${Input}`)
       .then(response => response.json())
       .then(data => {
         console.log(data)
         for (let i of data.results) {
-          TempImg.push(i.urls.regular)
+          TempImg.push(i.urls.raw)
         }
         setAllImages(TempImg)
         Pages = []
@@ -32,7 +33,8 @@ export default function Middle() {
           Pages.push(i)
         }
         setPages(Pages)
-      });
+      })
+      .catch(error => console.log(error));
   }
 
   const SearchSubmit = (e) => {
@@ -74,11 +76,8 @@ export default function Middle() {
         <div className='SearchMain'>
           <form onSubmit={SearchSubmit}>
             <input type='text' id='SearchInput'
-              // value={Input || ''}
               autoComplete='off' placeholder='Search By Key Word' aria-label="lorem ipsum"
-            // onChange={(event) => { setInput(event.target.value) }}
             />
-            {/* <button className='SearchButton'>Search</button> */}
           </form>
         </div>
         {
@@ -88,14 +87,6 @@ export default function Middle() {
             (<Images Name={Input} images={AllImages} found='none' notfound='flex'
             />)
         }
-
-        {/* {
-          (AllImages.length > 0) ?
-            (console.log('Yes')) :
-            (console.log('NO'))
-        } */}
-
-        {/* <Images images={AllImages} /> */}
         <div className='PaginationMain'>
           <img src={First} alt="Hitesh" onClick={() => setCurrent(1)} />
           <img src={previous} alt="Hitesh"
