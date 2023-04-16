@@ -4,8 +4,8 @@ import Moon from '../Assets/Images/moon-icon.svg'
 import '../css/Header.css'
 
 export default function Header() {
-  const [btnName, setBtnName] = useState(Moon)
-  const [Theme, setTheme] = useState('Light')
+  const [btnName, setBtnName] = useState(Sun)
+  const [Theme, setTheme] = useState('Dark')
   const ThemToggle = () => {
     if (btnName === Moon) {
       setTheme('Dark')

@@ -15,6 +15,7 @@ export default function Middle() {
   let [Current, setCurrent] = useState(1)
   let [MaxPageLimit, setMaxPageLimit] = useState(3)
   let [MinPageLimit, setMinPageLimit] = useState(0)
+  console.log(AllImages.length)
 
   const MainFetch = () => {
     let TempImg = []
@@ -42,22 +43,6 @@ export default function Middle() {
       setInput(document.getElementById('SearchInput').value)
       document.getElementById('SearchInput').value = ''
       setCurrent(1)
-      // let TempImg = []
-      // fetch(`https://api.unsplash.com/search/photos?client_id=Bb-6szc-iyrTPIG_IFgEl2Rt3-HiUOLaOVA0bfbKJQU&page=${Current}&query=${Input}`)
-      //   .then(response => response.json())
-      //   .then(data => {
-      //     console.log(data)
-      //     for (let i of data.results) {
-      //       TempImg.push(i.urls.regular)
-      //     }
-      //     setAllImages(TempImg)
-      //     Pages = []
-      //     for (let i = 1; i < (data.total_pages) + 1; i++) {
-      //       Pages.push(i)
-      //     }
-      //     setPages(Pages)
-      //   });
-      // setInput('')
     }
   }
 
@@ -80,16 +65,8 @@ export default function Middle() {
     setMaxPageLimit(Current + 1)
     setMinPageLimit(Current - 3)
     MainFetch()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Current, Input])
-
-  // useCallback(
-  //   () => {
-  //     console.log('CallBack')
-  //   },
-  //   [Current],
-  // )
-
 
   return (
     <>
@@ -104,7 +81,21 @@ export default function Middle() {
             {/* <button className='SearchButton'>Search</button> */}
           </form>
         </div>
-        <Images images={AllImages} />
+        {
+          (AllImages.length > 0) ?
+            (<Images Name={Input} images={AllImages} found='grid' notfound='none'
+            />) :
+            (<Images Name={Input} images={AllImages} found='none' notfound='flex'
+            />)
+        }
+
+        {/* {
+          (AllImages.length > 0) ?
+            (console.log('Yes')) :
+            (console.log('NO'))
+        } */}
+
+        {/* <Images images={AllImages} /> */}
         <div className='PaginationMain'>
           <img src={First} alt="Hitesh" onClick={() => setCurrent(1)} />
           <img src={previous} alt="Hitesh"
