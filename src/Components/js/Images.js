@@ -21,16 +21,13 @@ export default function Images(Props) {
         </div>
         <div className='ImagesMain-container' id='Img-Found' style={{ display: Props.found }}>
           <div className='Result-For'>
-            Result For : <span>{Props.Name}</span>
+            Result For ::: <span>{Props.Name}</span>
           </div>
           {
             Props.images.map((image, index) => {
               return (
                 <img
-                  src={`${image}&fm=webp&q=80&w=100`}
-                  srcset={`${image}&fm=webp&q=80&w=200 200w,
-                  ${image}&fm=webp&q=80&w=100 100w,
-                  ${image}&fm=webp&q=80&w=300 300w`}
+                  src={`${image}&fm=webp&auto=compress&w=200`}
                   alt="Hitesh"
                   key={index}
                   onClick={() => OpenModel(index)}
