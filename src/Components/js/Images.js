@@ -21,7 +21,7 @@ export default function Images(Props) {
         </div>
         <div className='ImagesMain-container' id='Img-Found' style={{ display: Props.found }}>
           <div className='Result-For'>
-            Result For ::: <span>{Props.Name}</span>
+            Result For : <span>{Props.Name}</span>
           </div>
           {
             Props.images.map((image, index) => {

@@ -10,9 +10,9 @@ import { DefultImages } from './Service'
 
 export default function Middle() {
   let [Pages, setPages] = useState([])
-  let DefultImg = DefultImages()
+  // let DefultImg = DefultImages()
   const [Input, setInput] = useState('nature')
-  const [AllImages, setAllImages] = useState(DefultImg)
+  const [AllImages, setAllImages] = useState([])
   let [Current, setCurrent] = useState(1)
   let [MaxPageLimit, setMaxPageLimit] = useState(3)
   let [MinPageLimit, setMinPageLimit] = useState(0)
