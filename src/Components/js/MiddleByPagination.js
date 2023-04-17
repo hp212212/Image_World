@@ -54,7 +54,7 @@ export default function MiddleByPagination() {
 
   const SearchSubmit = (e) => {
     e.preventDefault();
-    if (Input === '') {
+    if (document.getElementById('SearchInput').value === '') {
       alert('Input Field Must Be Non-Empty!!')
     } else {
       setInput(document.getElementById('SearchInput').value)
