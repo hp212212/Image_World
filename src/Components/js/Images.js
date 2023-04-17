@@ -27,7 +27,7 @@ export default function Images(Props) {
             Props.images.map((image, index) => {
               return (
                 <img
-                  src={`${image}&fm=webp&auto=compress&w=200`}
+                  src={`${image}&fm=webp&auto=compress&w=480`}
                   alt="Hitesh"
                   key={index}
                   onClick={() => OpenModel(index)}

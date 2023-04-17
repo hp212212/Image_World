@@ -8,7 +8,7 @@ import Last from '../Assets/Images/Last.svg'
 import { DefultImages } from './Service'
 // const Images = React.lazy(() => import('./Images.js'));
 
-export default function Middle() {
+export default function MiddleByPagination() {
   let [Pages, setPages] = useState([])
   let DefultImg = DefultImages()
   const [Input, setInput] = useState('nature')
@@ -19,20 +19,37 @@ export default function Middle() {
 
   const MainFetch = async () => {
     let TempImg = []
-    await fetch(`https://api.unsplash.com/search/photos?client_id=Bb-6szc-iyrTPIG_IFgEl2Rt3-HiUOLaOVA0bfbKJQU&page=${Current}&query=${Input}`)
-      .then(response => response.json())
-      .then(data => {
-        for (let i of data.results) {
-          TempImg.push(i.urls.raw)
-        }
-        setAllImages(TempImg)
-        Pages = []
-        for (let i = 1; i < (data.total_pages) + 1; i++) {
-          Pages.push(i)
-        }
-        setPages(Pages)
-      })
-      .catch(error => console.log(error));
+    // await fetch(`https://api.unsplash.com/search/photos?client_id=Bb-6szc-iyrTPIG_IFgEl2Rt3-HiUOLaOVA0bfbKJQU&page=${Current}&query=${Input}`)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     console.log(data.results)
+    //     for (let i of data.results) {
+    //       TempImg.push(i.urls.raw)
+    //     }
+    //     setAllImages(TempImg)
+    //     Pages = []
+    //     for (let i = 1; i < (data.total_pages) + 1; i++) {
+    //       Pages.push(i)
+    //     }
+    //     setPages(Pages)
+    //   })
+    //   .catch(error => console.log(error));
+    try {
+      const response = await fetch(`https://api.unsplash.com/search/photos?client_id=Bb-6szc-iyrTPIG_IFgEl2Rt3-HiUOLaOVA0bfbKJQU&page=${Current}&query=${Input}`);
+      const data = await response.json();
+      console.log(data.results)
+      for (let i of data.results) {
+        TempImg.push(i.urls.raw)
+      }
+      setAllImages(TempImg)
+      Pages = []
+      for (let i = 1; i < (data.total_pages) + 1; i++) {
+        Pages.push(i)
+      }
+      setPages(Pages)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const SearchSubmit = (e) => {

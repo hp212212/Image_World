@@ -42,7 +42,6 @@
     bottom: 0.3rem;
     width: 70px;
     background: rgb(61, 61, 243);
-    /* height: 100%; */
     color: #fff;
     border: none;
     cursor: pointer;
@@ -52,8 +51,6 @@
 /* -------------- Images Section ----------------- */
 .ImagesMain {
     width: 100%;
-    /* height: 100%; */
-    /* overflow: scroll; */
 }
 
 .Model-container {
@@ -61,7 +58,6 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    /* height: 100%; */
     top: 0;
     left: 0;
     overflow: auto;
@@ -69,10 +65,12 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.Model-container::-webkit-scrollbar {
+    display: none;
+}
+
 .Model-container .Model-container-inner {
-    /* transform:translateX(0vw); */
     width: 80%;
-    /* height: 80%; */
     margin: 5vh auto;
     position: relative;
     vertical-align: middle;
@@ -80,7 +78,6 @@
 
 .Model-container-inner>img {
     width: 100%;
-    /* height: 100%; */
     position: absolute;
     top: 0;
     left: 0;
@@ -160,7 +157,7 @@
 .ImagesMain-container>img {
     border-radius: 5px;
     width: 100%;
-    height: 20rem;
+    height: 30rem;
     /* object-position: center; */
     object-fit: cover;
     transition: all 0.3s ease-in-out;
