@@ -9,6 +9,7 @@ import { DefultImages } from './Service'
 // const Images = React.lazy(() => import('./Images.js'));
 
 export default function MiddleByPagination() {
+  const [loading, setLoading] = useState(false);
   let [Pages, setPages] = useState([])
   let DefultImg = DefultImages()
   const [Input, setInput] = useState('nature')
@@ -18,6 +19,7 @@ export default function MiddleByPagination() {
   let [MinPageLimit, setMinPageLimit] = useState(0)
 
   const MainFetch = async () => {
+    setLoading(true);
     let TempImg = []
     // await fetch(`https://api.unsplash.com/search/photos?client_id=Bb-6szc-iyrTPIG_IFgEl2Rt3-HiUOLaOVA0bfbKJQU&page=${Current}&query=${Input}`)
     //   .then(response => response.json())
@@ -37,7 +39,6 @@ export default function MiddleByPagination() {
     try {
       const response = await fetch(`https://api.unsplash.com/search/photos?client_id=Bb-6szc-iyrTPIG_IFgEl2Rt3-HiUOLaOVA0bfbKJQU&page=${Current}&query=${Input}`);
       const data = await response.json();
-      console.log(data.results)
       for (let i of data.results) {
         TempImg.push(i.urls.raw)
       }
@@ -47,8 +48,9 @@ export default function MiddleByPagination() {
         Pages.push(i)
       }
       setPages(Pages)
+      setLoading(false);
     } catch (error) {
-      console.log(error)
+      setLoading(false);
     }
   }
 
@@ -102,6 +104,7 @@ export default function MiddleByPagination() {
             (<Images Name={Input} images={AllImages} found='none' notfound='flex'
             />)
         }
+        {loading && <h2 className='loading'>Loading...</h2>}
         <div className='PaginationMain'>
           <img src={First} alt="Hitesh" onClick={() => setCurrent(1)} />
           <img src={previous} alt="Hitesh"
