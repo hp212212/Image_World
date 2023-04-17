@@ -16,14 +16,12 @@ export default function Middle() {
   let [Current, setCurrent] = useState(1)
   let [MaxPageLimit, setMaxPageLimit] = useState(3)
   let [MinPageLimit, setMinPageLimit] = useState(0)
-  console.log(AllImages.length)
 
   const MainFetch = async () => {
     let TempImg = []
     await fetch(`https://api.unsplash.com/search/photos?client_id=Bb-6szc-iyrTPIG_IFgEl2Rt3-HiUOLaOVA0bfbKJQU&page=${Current}&query=${Input}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         for (let i of data.results) {
           TempImg.push(i.urls.raw)
         }
