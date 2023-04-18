@@ -4,10 +4,13 @@
   "theme_color": "#000000",
   "background_color": "#fff",
   "display": "standalone",
-  "orientation": "",
-  "scope": "",
   "start_url": ".",
   "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
     {
       "src": "images/icons/icon-72x72.png",
       "sizes": "72x72",
