@@ -1,13 +1,13 @@
-# Super Market
-## Hosted Live: https://online-shopping-market.netlify.app//
+# Image World
+## Hosted Live: https://search-images-by-page-hitesh.netlify.app/
 
-Developed with: React, HTML, CSS
+Developed with: React, HTML, CSS, APIs
 
-*Note: The payment process will not be charging anything to your payment method. It is in test mode.* 
+*Note: On PAGINATION, can enjoy a huge collection of images based on "UNSPLASH API".* 
 
 
 
-<img src="super-market.png" height='300'>
+<img src="Image_World_P.png" height='300'>
 
 # Getting Started with Create React App
 Get started by running `npm install` and then `npm run start`
