@@ -6,11 +6,11 @@ Developed with: React, HTML, CSS, APIs
 *📌 An image search engine that will help to find any photo, simply by writing a keyword in the search bar. On PAGINATION, can enjoy a huge collection of images based on "UNSPLASH API".*
 
 
-<img src="Image_World_P.png" height='500px'>
+<img src="Image_World_P.png" >
 
 *📌 By clicking on the image, it will open and can download in super HD quality.* 
 
-<img src="Image_World_P2.png" height='500px'>
+<img src="Image_World_P2.png" >
 
 
 
