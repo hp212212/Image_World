@@ -12,6 +12,7 @@ Developed with: React, HTML, CSS, APIs
 
 <img src="Image_World_P2.png" >
 
+*Note : All images are depend on "UNSPLASH API".* 
 
 
 # Getting Started with Create React App
