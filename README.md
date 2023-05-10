@@ -5,11 +5,14 @@ Developed with: React, HTML, CSS, APIs
 
 *📌 An image search engine that will help to find any photo, simply by writing a keyword in the search bar. On PAGINATION, can enjoy a huge collection of images based on "UNSPLASH API".*
 
+
+<img src="Image_World_P.png" height='500px'>
+
 *📌 By clicking on the image, it will open and can download in super HD quality.* 
 
+<img src="Image_World_P2.png" height='500px'>
 
 
-<img src="Image_World_P.png">
 
 # Getting Started with Create React App
 Get started by running `npm install` and then `npm run start`
