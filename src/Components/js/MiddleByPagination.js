@@ -110,7 +110,7 @@ export default function MiddleByPagination() {
           <img src={previous} alt="Hitesh"
             onClick={() => {
               if (Current !== Pages[0]) {
-                setCurrent(Current + 1)
+                setCurrent(Current - 1)
               }
             }}
           />
